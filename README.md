@@ -12,8 +12,4 @@
 
 
 
-<a href="https://github.com/katakam/${{values.component_id}}/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=katakam/${{values.component_id}}" />
-</a>
-
 Made with 💜 by SES
