@@ -11,14 +11,9 @@
 ![GitHub](https://img.shields.io/github/license/${{values.destination.owner}}/${{values.component_id}})
 
 
-## ✨ Contributions
 
-We ❤️ contributions big or small. [See our guide](contributing.md) on how to get started.
-
-### Thanks to all our contributors!
-
-<a href="https://github.com/devxp-tech/${{values.component_id}}/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=devxp-tech/${{values.component_id}}" />
+<a href="https://github.com/katakam/${{values.component_id}}/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=katakam/${{values.component_id}}" />
 </a>
 
-Made with 💜 by DevXP-Tech
+Made with 💜 by SES
