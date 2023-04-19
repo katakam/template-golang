@@ -1,4 +1,4 @@
-# Thank you for making `devxp-tech/${{values.component_id}}` better
+# Thank you for making `katakam/${{values.component_id}}` better
 
 ## What kind of change does this PR introduce?
 <!-- Please check the one that applies to this PR using "x". -->
@@ -27,4 +27,4 @@
 
 * [ ] Read the [contributions](../CONTRIBUTING.md) page.
 * [ ] Read the [DCO](../DCO), if you are a first time contributor.
-* [ ] Read the [code of conduct]([Code of Conduct](https://github.com/devxp-tech/.github/blob/main/CODE_OF_CONDUCT.md)).
+* [ ] Read the [code of conduct]([Code of Conduct](https://github.com/katakam/.github/blob/main/CODE_OF_CONDUCT.md)).

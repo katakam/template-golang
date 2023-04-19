@@ -14,17 +14,17 @@ env:
 
 jobs:
   env:
-    uses: devxp-tech/.github/.github/workflows/env.yaml@main
+    uses: katakam/.github/.github/workflows/env.yaml@main
 
   build-and-push:
-    uses: devxp-tech/.github/.github/workflows/build-and-push.yaml@main
+    uses: katakam/.github/.github/workflows/build-and-push.yaml@main
     with:
       tag: ${{ needs.env.outputs.tag }}
     needs:
       - env
 
   security-gateway:
-    uses: devxp-tech/.github/.github/workflows/trivy.yaml@main
+    uses: katakam/.github/.github/workflows/trivy.yaml@main
     with:
       tag: ${{ needs.env.outputs.tag }}
     needs:
@@ -32,19 +32,19 @@ jobs:
       - build-and-push
 
   deploy:
-    uses: devxp-tech/.github/.github/workflows/deploy.yaml@main
+    uses: katakam/.github/.github/workflows/deploy.yaml@main
     secrets: inherit
     with:
       tag: ${{ needs.env.outputs.tag }}
       repository: ${{ needs.env.outputs.repository }}
-      url: https://${{ needs.env.outputs.repository }}.devxp-tech.io
+      url: https://${{ needs.env.outputs.repository }}.katakam.io
       environment: development
     needs:
       - env
       - security-gateway
 
   notify:
-    uses: devxp-tech/.github/.github/workflows/notify.yaml@main
+    uses: katakam/.github/.github/workflows/notify.yaml@main
     if: always()
     secrets: inherit
     needs:

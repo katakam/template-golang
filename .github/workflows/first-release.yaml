@@ -6,17 +6,17 @@ on:
 
 jobs:
   env:
-    uses: devxp-tech/.github/.github/workflows/env.yaml@main
+    uses: katakam/.github/.github/workflows/env.yaml@main
 
   test:
-    uses: devxp-tech/.github/.github/workflows/test.yaml@main
+    uses: katakam/.github/.github/workflows/test.yaml@main
 
   quality-gate:
-    uses: devxp-tech/.github/.github/workflows/sonarqube.yaml@main
+    uses: katakam/.github/.github/workflows/sonarqube.yaml@main
     secrets: inherit
 
   docs:
-    uses: devxp-tech/.github/.github/workflows/techdocs.yaml@main
+    uses: katakam/.github/.github/workflows/techdocs.yaml@main
     secrets: inherit
     with:
       repository: ${{ needs.env.outputs.repository }}
@@ -24,7 +24,7 @@ jobs:
       - env
 
   build-and-push:
-    uses: devxp-tech/.github/.github/workflows/build-and-push.yaml@main
+    uses: katakam/.github/.github/workflows/build-and-push.yaml@main
     with:
       tag: ${{ needs.env.outputs.tag }}
     needs:
@@ -33,7 +33,7 @@ jobs:
       - quality-gate
 
   security-gateway:
-    uses: devxp-tech/.github/.github/workflows/trivy.yaml@main
+    uses: katakam/.github/.github/workflows/trivy.yaml@main
     with:
       tag: ${{ needs.env.outputs.tag }}
     needs:
@@ -41,31 +41,31 @@ jobs:
       - build-and-push
 
   deploy:
-    uses: devxp-tech/.github/.github/workflows/deploy.yaml@main
+    uses: katakam/.github/.github/workflows/deploy.yaml@main
     secrets: inherit
     with:
       tag: ${{ needs.env.outputs.tag }}
       repository: ${{ needs.env.outputs.repository }}
-      url: https://${{ needs.env.outputs.repository }}.devxp-tech.io
+      url: https://${{ needs.env.outputs.repository }}.katakam.io
       environment: development
     needs:
       - env
       - security-gateway
 
   promote:
-    uses: devxp-tech/.github/.github/workflows/promote.yaml@main
+    uses: katakam/.github/.github/workflows/promote.yaml@main
     secrets: inherit
     with:
       tag: ${{ needs.env.outputs.tag }}
       repository: ${{ needs.env.outputs.repository }}
-      url: https://${{ needs.env.outputs.repository }}.devxp-tech.io
+      url: https://${{ needs.env.outputs.repository }}.katakam.io
       environment: production
     needs:
       - env
       - deploy
 
   notify:
-    uses: devxp-tech/.github/.github/workflows/notify.yaml@main
+    uses: katakam/.github/.github/workflows/notify.yaml@main
     if: always()
     secrets: inherit
     needs:

@@ -1,8 +1,8 @@
 package main
 
 import (
-	_ "github.com/devxp-tech/${{values.component_id}}/config"
-	"github.com/devxp-tech/${{values.component_id}}/controllers"
+	_ "github.com/katakam/${{values.component_id}}/config"
+	"github.com/katakam/${{values.component_id}}/controllers"
 	"github.com/gin-gonic/gin"
 )
 
