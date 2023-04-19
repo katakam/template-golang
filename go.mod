@@ -1,4 +1,4 @@
-module github.com/devxp-tech/${{values.component_id}}
+module github.com/katakam/${{values.component_id}}
 
 go 1.18
 

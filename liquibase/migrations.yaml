@@ -2,7 +2,7 @@
 databaseChangeLog:
   - changeSet:
       id: 1
-      author: diegoluisi
+      author: katakam
       changes:
         - createTable:
             tableName: example

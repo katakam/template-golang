@@ -4,7 +4,7 @@ import (
 	"io/ioutil"
 	"net/http"
 
-	"github.com/devxp-tech/${{values.component_id}}/pkd/github"
+	"github.com/katakam/${{values.component_id}}/pkd/github"
 	"github.com/gin-gonic/gin"
 	"github.com/gritzkoo/golang-health-checker-lw/pkg/healthchecker"
 	"github.com/sirupsen/logrus"
